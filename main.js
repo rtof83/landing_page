@@ -108,15 +108,16 @@ form.addEventListener('submit', (e) => {
     }
     let convertData = JSON.stringify(data);
   
-    localStorage.setItem('lead', convertData)
-  
-    document.getElementById('error').innerHTML = `<b>Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</b>`
-  
-    document.getElementById('txtemail').value = ''
-    document.getElementById('txtnome').value = ''
-  
-    content.innerHTML = done
+    localStorage.setItem('lead', convertData);
+
+    document.getElementById('contact').innerHTML = `<h1 class="title">aguarde...</h1>`;
+    setTimeout(() => {
+      document.getElementById('contact').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
+      document.getElementById('header').innerHTML = ``;
+      window.scrollTo(0, 0);  
+    }, 3000);
+
   } else {
-    document.getElementById('error').innerHTML = `<b>Atenção! Email inválido!<br>Tente novamente.</b>`
+    document.getElementById('error').innerHTML = `<b>Atenção! Email inválido!<br>Tente novamente.</b>`;
   }
 })
