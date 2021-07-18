@@ -107,25 +107,30 @@ body {
 }
 
 .section {
-  padding: .5rem 3rem;
+  /*padding: .5rem 3rem;*/
+  padding: 0 3rem;
+
 }
 
 .contador {
-  font-size: 240%;
-  display: flex;
+  font: 700 240% var(--title-font);
   justify-content: center;
+  text-align: center;
   background-color: rgba(255, 72, 0, 0.959);
   color: white;
-  font-weight: bold;
   width: 100%;
   padding: 2rem;
 
-  /*position: relative;*/
-  position: relative;
+  position: fixed;
+  left: 0;
+  top: 0;
   
   overflow: hidden; 
-  z-index: 10;
   box-shadow: 0 5px 10px rgba(51, 51, 51, 0.63);
+}
+
+.timerComp {
+  margin-top: 11rem; 
 }
 
 .section .title {

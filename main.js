@@ -75,14 +75,18 @@ function startTimer(duration, display) {
       seconds = seconds < 10 ? "0" + seconds : seconds;
       display.textContent = "Você tem " + minutes + ":" + seconds + " para decidir!";
       if (--timer < 0) {
-          timer = duration;
+        //timer = duration;
+        display.textContent = "Tempo esgotado!";
+        document.getElementById('txtEmail').disabled = true;
+        document.getElementById('txtNome').disabled = true;
+        document.getElementById('btnCadastrar').disabled = true;
       }
   }, 1000);
 }
 
 window.onload = function () {
   var duration = 60 * 15; // Converter para segundos (60 segundos X quant. minutos)
-      display = document.querySelector('#timer'); // selecionando o timer
+  display = document.querySelector('#timer'); // selecionando o timer
   startTimer(duration, display); // iniciando o timer
 };
 
@@ -99,9 +103,9 @@ const form = document.getElementById('form')
 form.addEventListener('submit', (e) => {
   e.preventDefault();
 
-  let email = document.getElementById('txtemail').value;
+  let email = document.getElementById('txtEmail').value;
   if (validateEmail(email)) {
-    let nome = document.getElementById('txtnome').value;
+    let nome = document.getElementById('txtNome').value;
     let data = {
       nome,
       email
@@ -110,13 +114,15 @@ form.addEventListener('submit', (e) => {
   
     localStorage.setItem('lead', convertData);
 
-    document.getElementById('header').innerHTML = ``;
     document.getElementById('cadastro').innerHTML = `<h1 class="title">aguarde...</h1>`;
     setTimeout(() => {
       document.getElementById('cadastro').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
     }, 2500);
 
     setTimeout(() => {window.scrollTo(0, 0)}, 6000);
+
+    document.getElementById('header').remove();
+    document.getElementById('timerComp').remove();
   } else {
     document.getElementById('error').innerHTML = `<b>Atenção! Email inválido!<br>Tente novamente.</b>`;
   }
