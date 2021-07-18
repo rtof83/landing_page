@@ -114,7 +114,7 @@ form.addEventListener('submit', (e) => {
     document.getElementById('cadastro').innerHTML = `<h1 class="title">aguarde...</h1>`;
     setTimeout(() => {
       document.getElementById('cadastro').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
-    }, 3000);
+    }, 2500);
 
     setTimeout(() => {window.scrollTo(0, 0)}, 6000);
   } else {
