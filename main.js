@@ -110,10 +110,10 @@ form.addEventListener('submit', (e) => {
   
     localStorage.setItem('lead', convertData);
 
+    document.getElementById('header').innerHTML = ``;
     document.getElementById('contact').innerHTML = `<h1 class="title">aguarde...</h1>`;
     setTimeout(() => {
-      document.getElementById('contact').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
-      document.getElementById('header').innerHTML = ``;
+      document.getElementById('content').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
     }, 3000);
 
     setTimeout(() => {window.scrollTo(0, 0)}, 3000);
