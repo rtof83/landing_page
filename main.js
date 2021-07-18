@@ -114,9 +114,9 @@ form.addEventListener('submit', (e) => {
     setTimeout(() => {
       document.getElementById('contact').innerHTML = `<h1 class="title">Parabéns ` + nome + `!<br>Email cadastrado com sucesso!</h>`;
       document.getElementById('header').innerHTML = ``;
-      window.scrollTo(0, 0);  
     }, 3000);
 
+    setTimeout(() => {window.scrollTo(0, 0)}, 3000);
   } else {
     document.getElementById('error').innerHTML = `<b>Atenção! Email inválido!<br>Tente novamente.</b>`;
   }
