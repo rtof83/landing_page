@@ -35,7 +35,7 @@ img {
 
   /* fonts */
   --title-font-size: 1.875rem;
-  --subtitle-font-size: rem;
+  --subtitle-font-size: 1.5rem;
 
   --title-font: 'Poppins', sans-serif;
   --body-font: 'DM Sans', sans-serif;
@@ -65,6 +65,7 @@ body {
   height: 3.5rem;
   display: inline-flex;
   align-items: center;
+  text-align: center;
   padding: 0 2rem;
   border-radius: 0.25rem;
   font: 500 1rem var(--body-font);
@@ -109,7 +110,7 @@ body {
 }
 
 .contador {
-  font-size: 200%;
+  font-size: 240%;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 72, 0, 0.959);
@@ -159,10 +160,10 @@ body {
 
 /*====  LOGO ============================ */
 .logo {
-  font: 700 300% var(--title-font);
+  font: 700 3.5rem var(--title-font);
   color: var(--title-color);
-  display: flex;
-  justify-content: center;
+  display: block;
+  text-align: center;
 }
 
 .logo span {
@@ -580,7 +581,7 @@ footer .social a:hover {
 
 
 /*====  background ============================ */
-.background-section {
+.background {
   background-image: url(https://previews.123rf.com/images/zven0/zven01603/zven0160300028/54795618-abstract-business-background-with-blue-world-.jpg);
   background-attachment: fixed;
 }
